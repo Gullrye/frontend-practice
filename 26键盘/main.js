@@ -38,31 +38,26 @@ let hash = {
 }
 
 // 取出localStorage 中的 z 对应的 hash
-let hashInLocalStorage = JSON.parse(localStorage.getItem('zzz') || 'null')
+let hashInLocalStorage = getFromLocalStorage('zzz')
 if (hashInLocalStorage) {
-  hsah = hashInLocalStorage
-  console.log(hash)
+  hash = hashInLocalStorage
 }
 
 // 2. 生成键盘
 let keyBox = document.getElementsByClassName('key-box')[0]
 let i = 0
 
-while (i < keyRows.length) {
-  let ul = document.createElement('ul')
+for (let i = 0; i < keyRows.length; i++) {
+  let ul = tag('ul')
   keyBox.appendChild(ul)
 
   for (let j = 0; j < keyRows[i].length; j++) {
-    let li = document.createElement('li')
-    let span = document.createElement('span')
+    let li = tag('li', { className: 'key' })
+    let span = tag('span', { textContent: keyRows[i][j] })
     li.appendChild(span)
-    span.textContent = keyRows[i][j]
-    li.className = 'key'
     ul.appendChild(li)
-    let editBtn = document.createElement('button')
-    editBtn.textContent = 'E'
-    editBtn.id = keyRows[i][j]
-    let img = document.createElement('img')
+    let editBtn = tag('button', { textContent: 'E', id: keyRows[i][j] })
+    let img = tag('img')
 
     if (hash[keyRows[i][j]]) {
       img.src = 'http://' + hash[keyRows[i][j]] + '/favicon.ico'
@@ -76,7 +71,7 @@ while (i < keyRows.length) {
     li.appendChild(editBtn)
     li.appendChild(img)
     editBtn.onclick = (e) => {
-      let img2 = e['target'].nextSibling       // 下一个兄弟元素
+      let img2 = e['target'].nextSibling // 下一个兄弟元素
       let editWebsite = prompt('输入一个网址：')
 
       hash[e['target']['id']] = editWebsite
@@ -85,10 +80,8 @@ while (i < keyRows.length) {
         e.target.src = 'images/default_ico32.png'
       }
       localStorage.setItem('zzz', JSON.stringify(hash))
-
     }
   }
-  i += 1
 }
 
 // 3. 监听键盘
@@ -98,4 +91,17 @@ document.onkeydown = (e) => {
   let website = hash[e.key]
 
   window.open('https://' + website)
+}
+
+function getFromLocalStorage(name) {
+  return JSON.parse(localStorage.getItem(name) || 'null')
+}
+
+function tag(tagName, attributes) {
+  let element = document.createElement(tagName)
+  for (let key in attributes) {
+    // key 为 className, id, textContent
+    element[key] = attributes[key]
+  }
+  return element
 }
