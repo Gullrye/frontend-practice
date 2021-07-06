@@ -45,42 +45,27 @@ if (hashInLocalStorage) {
 
 // 2. 生成键盘
 let keyBox = document.getElementsByClassName('key-box')[0]
-let i = 0
 
 for (let i = 0; i < keyRows.length; i++) {
   let ul = tag('ul')
+
   keyBox.appendChild(ul)
-
+  
   for (let j = 0; j < keyRows[i].length; j++) {
-    let li = tag('li', { className: 'key' })
     let span = tag('span', { textContent: keyRows[i][j] })
+    
+    let editBtn = createButton(keyRows[i][j])
+    
+    let img = createImage(hash[keyRows[i][j]])
+    
+    
+    let li = tag('li', { className: 'key' })
+
     li.appendChild(span)
-    ul.appendChild(li)
-    let editBtn = tag('button', { textContent: 'E', id: keyRows[i][j] })
-    let img = tag('img')
-
-    if (hash[keyRows[i][j]]) {
-      img.src = 'http://' + hash[keyRows[i][j]] + '/favicon.ico'
-    } else {
-      img.src = 'images/default_ico32.png'
-    }
-    img.onerror = (e) => {
-      e.target.src = 'images/default_ico32.png'
-    }
-
     li.appendChild(editBtn)
     li.appendChild(img)
-    editBtn.onclick = (e) => {
-      let img2 = e['target'].nextSibling // 下一个兄弟元素
-      let editWebsite = prompt('输入一个网址：')
-
-      hash[e['target']['id']] = editWebsite
-      img2.src = 'http://' + editWebsite + '/favicon.ico'
-      img2.onerror = (e) => {
-        e.target.src = 'images/default_ico32.png'
-      }
-      localStorage.setItem('zzz', JSON.stringify(hash))
-    }
+    ul.appendChild(li)
+    
   }
 }
 
@@ -104,4 +89,35 @@ function tag(tagName, attributes) {
     element[key] = attributes[key]
   }
   return element
+}
+
+function createButton(buttonId) {
+  let editBtn = tag('button', { textContent: 'E', id: buttonId })
+    editBtn.onclick = (e) => {
+      let img2 = e['target'].nextSibling // 下一个兄弟元素
+      let editWebsite = prompt('输入一个网址：')
+      
+      hash[e['target']['id']] = editWebsite
+      img2.src = 'http://' + editWebsite + '/favicon.ico'
+      img2.onerror = (e) => {
+        e.target.src = 'images/default_ico32.png'
+      }
+      localStorage.setItem('zzz', JSON.stringify(hash))
+    }
+
+    return editBtn
+}
+
+function createImage(domain) {
+  let img = tag('img')
+  if (domain) {
+    img.src = 'http://' + domain + '/favicon.ico'
+  } else {
+    img.src = 'images/default_ico32.png'
+  }
+  img.onerror = (e) => {
+    e.target.src = 'images/default_ico32.png'
+  }
+
+  return img
 }
