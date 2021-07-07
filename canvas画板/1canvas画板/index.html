@@ -13,73 +13,91 @@
       #canvas {
         background: #000;
       }
-      #eraser {
+      .actions {
         position: fixed;
         bottom: 10px;
         left: 10px;
-        background: grey;
+      }
+      .actions > #eraser,
+      .actions > #brush {
+        background: #fff;
         border: none;
         padding: 5px;
+      }
+      .actions > #brush {
+        display: none;
+      }
+      .actions.x > #brush {
+        display: inline-block;
+      }
+      .actions.x > #eraser {
+        display: none;
       }
     </style>
   </head>
   <body>
     <canvas id="canvas"></canvas>
-    <button id="eraser">橡皮擦</button>
+    <div class="actions">
+      <button id="eraser">橡皮擦</button>
+      <button id="brush">画笔</button>
+    </div>
     <script>
       const canvas = document.getElementById('canvas')
       setCanvasSize()
       window.onresize = () => {
         setCanvasSize()
       }
-      
+
       const ctx = canvas.getContext('2d')
-      let using = false  // 鼠标是否 mousedown
-      let lastPoint = { x: undefined, y: undefined }
+      listenToMouse(canvas)
+
       let eraserEnable = false
       let eraser = document.getElementById('eraser')
-      
+      let brush = document.getElementById('brush')
+      let acitons = document.getElementsByClassName('actions')[0]
       eraser.onclick = (e) => {
-        eraserEnable = !eraserEnable
-        if (eraserEnable) {
-          e.target.style.backgroundColor = '#fff'
-        } else {
-          e.target.style.backgroundColor = 'grey'
-        }
+        eraserEnable = true
+        acitons.className = 'actions x'
       }
-      
-
-      canvas.onmousedown = (e) => {
-        let x = e.clientX
-        let y = e.clientY
-        if (eraserEnable) {
-          using = true
-          ctx.clearRect(x-10, y-10, 20, 20)
-        } else {
-          using = true
-          drawCircle(x, y, 2.5)
-          lastPoint = { x: x, y: y }
-        }
+      brush.onclick = (e) => {
+        eraserEnable = false
+        acitons.className = 'actions'
       }
 
-      canvas.onmousemove = (e) => {
-        let x = e.clientX
-        let y = e.clientY
-        if (eraserEnable) {
-          if (using) {
-            ctx.clearRect(x-10, y-10, 20, 20)
+      function listenToMouse(canvas) {
+        let using = false // 鼠标是否 mousedown
+        let lastPoint = { x: undefined, y: undefined }
+
+        canvas.onmousedown = (e) => {
+          let x = e.clientX
+          let y = e.clientY
+          using = true
+          if (eraserEnable) {
+            ctx.clearRect(x - 10, y - 10, 20, 20)
+          } else {
+            drawCircle(x, y, 2.5)
+            lastPoint = { x: x, y: y }
           }
-        } else {
-          if (using) {
+        }
+
+        canvas.onmousemove = (e) => {
+          let x = e.clientX
+          let y = e.clientY
+          if (!using) {
+            return
+          }
+          if (eraserEnable) {
+            ctx.clearRect(x - 10, y - 10, 20, 20)
+          } else {
             let newPoint = { x: x, y: y }
             drawLine(lastPoint.x, lastPoint.y, newPoint.x, newPoint.y)
             lastPoint = newPoint
           }
         }
-      }
 
-      canvas.onmouseup = () => {
-        using = false
+        canvas.onmouseup = () => {
+          using = false
+        }
       }
 
       function setCanvasSize() {
