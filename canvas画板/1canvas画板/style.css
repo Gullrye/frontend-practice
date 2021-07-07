@@ -2,23 +2,14 @@
   margin: 0;
   padding: 0;
 }
-.icon {
-  width: 1.5em;
-  height: 1.5em;
-  vertical-align: -0.15em;
-  fill: white;
-  overflow: hidden;
-  padding: 10px;
-  cursor: pointer;
-}
 #canvas {
   position: relative;
   background: #000;
 }
 .actions {
-  position: fixed;
-  top: 80px;
-  left: 20px;
+  position: absolute;
+  top: 28px;
+  left: 150px;
 }
 .actions > #eraser,
 .actions > #brush {
@@ -37,13 +28,23 @@
   display: none;
 }
 
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: white;
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+  transition: all .3s;
+}
 .icons {
   position: absolute;
   top: 0;
   left: 0;
   margin: 20px;
 }
-
 .icons svg.active {
   fill: red;
+  transform: scale(1.2);
 }
