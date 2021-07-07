@@ -2,19 +2,30 @@
   margin: 0;
   padding: 0;
 }
+.icon {
+  width: 1.5em;
+  height: 1.5em;
+  vertical-align: -0.15em;
+  fill: white;
+  overflow: hidden;
+  padding: 10px;
+  cursor: pointer;
+}
 #canvas {
+  position: relative;
   background: #000;
 }
 .actions {
   position: fixed;
-  bottom: 10px;
-  left: 10px;
+  top: 80px;
+  left: 20px;
 }
 .actions > #eraser,
 .actions > #brush {
-  background: #fff;
-  border: none;
   padding: 5px;
+  border: none;
+  border-radius: 6px;
+  background: #fff;
 }
 .actions > #brush {
   display: none;
@@ -24,4 +35,15 @@
 }
 .actions.x > #eraser {
   display: none;
+}
+
+.icons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  margin: 20px;
+}
+
+.icons svg.active {
+  fill: red;
 }

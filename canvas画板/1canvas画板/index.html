@@ -5,14 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
     <canvas id="canvas"></canvas>
-    <div class="actions">
-      <button id="eraser">橡皮擦</button>
-      <button id="brush">画笔</button>
-      <script src="./main.js"></script>
+
+    <div class="icons">
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-pen"></use>
+      </svg>
+      <svg class="icon" aria-hidden="true">
+        <use xlink:href="#icon-eraser"></use>
+      </svg>
     </div>
+
+    <div class="actions">
+      <span id="eraser">橡皮擦</span>
+      <span id="brush">大画笔</span>
+    </div>
+    <script src="./main.js"></script>
+    <script src="//at.alicdn.com/t/font_2658975_wmbpaslfblm.js"></script>
   </body>
 </html>

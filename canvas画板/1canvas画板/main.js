@@ -8,16 +8,26 @@ const ctx = canvas.getContext('2d')
 listenToUser(canvas)
 
 let eraserEnable = false
-let eraser = document.getElementById('eraser')
-let brush = document.getElementById('brush')
+
 let acitons = document.getElementsByClassName('actions')[0]
-eraser.onclick = (e) => {
-  eraserEnable = true
+
+
+// icon图标点击
+let penIco = document.getElementsByClassName('icon')[0]
+let eraserIco = document.getElementsByClassName('icon')[1]
+
+penIco.onclick = () => {
+  eraserEnable = false
+  penIco.classList.add('active')
+  eraserIco.classList.remove('active')
   acitons.className = 'actions x'
 }
-brush.onclick = (e) => {
-  eraserEnable = false
+eraserIco.onclick = () => {
+  eraserEnable = true
+  eraserIco.classList.add('active')
+  penIco.classList.remove('active')
   acitons.className = 'actions'
+  
 }
 
 function listenToUser(canvas) {
