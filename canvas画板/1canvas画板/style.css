@@ -4,7 +4,7 @@
 }
 #canvas {
   position: relative;
-  background: #000;
+  background: #fff;
 }
 .actions {
   position: absolute;
@@ -14,7 +14,7 @@
 .actions > #eraser,
 .actions > #brush {
   padding: 5px;
-  border: none;
+  border: 1px solid #000;
   border-radius: 6px;
   background: #fff;
 }
@@ -32,7 +32,7 @@
   width: 1.5em;
   height: 1.5em;
   vertical-align: -0.15em;
-  fill: white;
+  fill: #000;
   overflow: hidden;
   padding: 10px;
   cursor: pointer;
@@ -57,7 +57,6 @@
 
 ul, ol {
   list-style: none;
-  color: #fff;
 }
 
 .colors > li {
@@ -65,10 +64,11 @@ ul, ol {
   height: 20px;
   border-radius: 50%;
   margin: 10px 0;
+  transition: all .3s;
 }
 
-.colors > li.white {
-  background: white;
+.colors > li.black {
+  background: black;
 }
 .colors > li.blue {
   background: blue;
@@ -80,5 +80,29 @@ ul, ol {
   background: yellow;
 }
 .colors > li.active {
-  box-shadow: 0 0 0 1px #fff;
+  box-shadow: 0 0 0 1px skyblue;
+  transform: scale(1.2);
+}
+
+.sizes {
+  position: absolute;
+  top: 8px;
+  right: 20px;
+}
+.sizes > li {
+  margin: 20px 5px;
+  transition: all .3s;
+}
+.sizes .thin {
+  height: 0;
+  width: 20px;
+  border-top: 3px solid #000;
+}
+.sizes .thick {
+  height: 0;
+  width: 20px;
+  border-top: 6px solid #000;
+}
+.sizes li.active {
+  transform: rotate(90deg);
 }

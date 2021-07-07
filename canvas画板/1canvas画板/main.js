@@ -30,7 +30,7 @@ eraserIco.onclick = () => {
 
 // 取色器点击
 let colors = document.getElementsByClassName('color')
-ctx.strokeStyle = '#fff'
+ctx.strokeStyle = '#000'
 
 for (let i = 0; i < colors.length; i++) {
   let index = i
@@ -43,15 +43,19 @@ for (let i = 0; i < colors.length; i++) {
     ctx.strokeStyle = colors[index].id
   }
 }
-// blue.onclick = () => {
-//   ctx.strokeStyle = 'blue'
-// }
-// green.onclick = () => {
-//   ctx.strokeStyle = 'green'
-// }
-// yellow.onclick = () => {
-//   ctx.strokeStyle = 'yellow'
-// }
+
+// 线粗细点击
+let lineWidth = 5
+thin.onclick = () => {
+  lineWidth = 5
+  thin.classList.add('active')
+  thick.classList.remove('active')
+}
+thick.onclick = () => {
+  lineWidth = 10
+  thick.classList.add('active')
+  thin.classList.remove('active')
+}
 
 // 下边为函数
 function listenToUser(canvas) {
@@ -136,14 +140,14 @@ function setCanvasSize() {
 
 function drawCircle(x, y, radius) {
   ctx.beginPath()
-  ctx.fillStyle = '#fff'
+  ctx.fillStyle = '#000'
   ctx.arc(x, y, radius, 0, Math.PI * 2)
   ctx.fill()
 }
 
 function drawLine(x1, y1, x2, y2) {
   ctx.beginPath()
-  ctx.lineWidth = 5
+  ctx.lineWidth = lineWidth
   ctx.moveTo(x1, y1)
   ctx.lineTo(x2, y2)
   ctx.stroke()
