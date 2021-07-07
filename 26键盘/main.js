@@ -7,7 +7,7 @@ let hash = hashA['hash']
 generateKeyboard(keyRows, hash)
 
 // 3. 监听用户动作
-ListenToUser(hash)
+listenToUser(hash)
 
 
 // 下面是工具函数
@@ -130,7 +130,7 @@ function generateKeyboard(keyRows, hash) {
   }
 }
 
-function ListenToUser(hash) {
+function listenToUser(hash) {
   document.onkeydown = (e) => {
     console.log(e)
     let website = hash[e.key]
