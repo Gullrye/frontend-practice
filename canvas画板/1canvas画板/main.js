@@ -45,6 +45,7 @@ saveIco.onclick = () => {
 // 取色器点击
 let colors = document.getElementsByClassName('color')
 ctx.strokeStyle = '#000'
+ctx.fillStyle = '#000'
 
 for (let i = 0; i < colors.length; i++) {
   let index = i
@@ -54,6 +55,7 @@ for (let i = 0; i < colors.length; i++) {
     }
     // e.target.classList.add('active')
     colors[index].classList.add('active')
+    ctx.fillStyle = colors[index].id
     ctx.strokeStyle = colors[index].id
   }
 }
@@ -154,7 +156,6 @@ function setCanvasSize() {
 
 function drawCircle(x, y, radius) {
   ctx.beginPath()
-  ctx.fillStyle = '#000'
   ctx.arc(x, y, radius, 0, Math.PI * 2)
   ctx.fill()
 }
