@@ -9,7 +9,7 @@
 .actions {
   position: absolute;
   top: 28px;
-  left: 170px;
+  right: 10px;
 }
 .actions > #eraser,
 .actions > #brush {
@@ -86,7 +86,7 @@ ul, ol {
 
 .sizes {
   position: absolute;
-  top: 8px;
+  top: 70px;
   right: 20px;
 }
 .sizes > li {

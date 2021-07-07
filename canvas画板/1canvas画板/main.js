@@ -15,6 +15,7 @@ let acitons = document.getElementsByClassName('actions')[0]
 let penIco = document.getElementsByClassName('icon')[0]
 let eraserIco = document.getElementsByClassName('icon')[1]
 let clearIco = document.getElementsByClassName('icon')[2]
+let saveIco = document.getElementsByClassName('icon')[3]
 
 penIco.onclick = () => {
   eraserEnable = false
@@ -30,6 +31,15 @@ eraserIco.onclick = () => {
 }
 clearIco.onclick = () => {
   ctx.clearRect(0, 0, canvas.width, canvas.height)
+}
+saveIco.onclick = () => {
+  let url = canvas.toDataURL('image/png')
+  let a = document.createElement('a')
+  document.body.appendChild(a)
+  a.href = url
+  a.download = 'my_img'
+  a.target = '_blank'
+  a.click()
 }
 
 // 取色器点击
