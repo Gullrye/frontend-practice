@@ -14,6 +14,7 @@ let acitons = document.getElementsByClassName('actions')[0]
 // icon图标点击
 let penIco = document.getElementsByClassName('icon')[0]
 let eraserIco = document.getElementsByClassName('icon')[1]
+let clearIco = document.getElementsByClassName('icon')[2]
 
 penIco.onclick = () => {
   eraserEnable = false
@@ -26,6 +27,9 @@ eraserIco.onclick = () => {
   eraserIco.classList.add('active')
   penIco.classList.remove('active')
   acitons.className = 'actions x'
+}
+clearIco.onclick = () => {
+  ctx.clearRect(0, 0, canvas.width, canvas.height)
 }
 
 // 取色器点击
