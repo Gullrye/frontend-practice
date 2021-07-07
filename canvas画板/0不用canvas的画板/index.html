@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>不用canvas的画板</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        display: flex;
+      }
+      #canvasDiv {
+        position: relative;
+        height: 100vh;
+        width: 50vw;
+        background: #000;
+      }
+      #canvasDiv p {
+        text-align: center;
+        color: #fff;
+      }
+
+      #canvas {
+        /* canvas 不用 vw vh，会使得画好的图发生变化 */
+        width: 50vw; 
+      }
+    </style>
+  </head>
+  <body>
+    <div id="canvasDiv">
+      <p>不用canvas的画板</p>
+    </div>
+    <script>
+      let canvasDiv = document.getElementById('canvasDiv')
+      let painting = false
+
+      canvasDiv.onmousedown = (e) => {
+        painting = true
+        paint(e)
+      }
+
+      canvasDiv.onmousemove = (e) => {
+        if (painting) {
+          paint(e)
+        } else {
+        }
+      }
+
+      canvasDiv.onmouseup = () => {
+        painting = false
+      }
+
+      function paint(e) {
+        let x = e.clientX
+        let y = e.clientY
+        let dot = document.createElement('div')
+
+        dot.style = `width: 20px; height: 20px;
+          border-radius: 50%; background: #fff;
+          position: absolute; top: ${y - 10}px; left: ${x - 10}px`
+          canvasDiv.appendChild(dot)
+      }
+    </script>
+  </body>
+</html>
