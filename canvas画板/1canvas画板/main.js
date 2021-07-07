@@ -24,7 +24,7 @@ function listenToUser(canvas) {
   let using = false // 鼠标是否 mousedown
   let lastPoint = { x: undefined, y: undefined }
 
-  // 特性检测
+  // 特性检测，手机上document.body.ontouchstart为null
   if (document.body.ontouchstart !== undefined) {
     // 触屏设备
     canvas.ontouchstart = (e) => {
