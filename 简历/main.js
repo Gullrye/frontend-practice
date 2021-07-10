@@ -1,12 +1,10 @@
-
-let header = document.querySelector('.header-inner')
-
 // 导航栏动画
+let headerTop = document.querySelector('header')
 window.onscroll = () => {
-  if (window.scrollY > 0) {
-    header.classList.add('active')
+  if (window.scrollY > 0) { 
+    headerTop.classList.add('sticky')
   } else {
-    header.classList.remove('active')
+    headerTop.classList.remove('sticky')
   }
 }
 
@@ -25,4 +23,4 @@ for (let i = 0; i < btns.length; i++) {
 let startPage = document.querySelector('.start-page')
 setTimeout(function(){
   startPage.classList.remove('active')
-}, 3000)
+}, 2000)

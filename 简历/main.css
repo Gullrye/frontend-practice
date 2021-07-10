@@ -12,20 +12,36 @@ body {
 header {
   position: fixed;
   width: 100%;
+  box-sizing: border-box;
+  padding: 10px 15px;
   background-color: transparent;
+  color: #bcbec2;
   z-index: 3;
-  transition: all .3;
-}
-
-.header-inner {
-  transition: all .3;
+  transition: all .5s;
 }
 
 .header-inner {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 15px;
+}
+
+.header-inner .hamburger-container {
+  width: 55px;
+  height: 55px;
+  font-size: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  color: #bcbec2;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+header.sticky {
+  padding: 0 15px;
+  box-shadow: 0 10px 30px rgb(0, 0, 0, 19%), 0 6px 10px rgb(0, 0, 0, 23%);
+  color: #3d4451;
+  background: #fff;
 }
 
 .logo span {
@@ -49,7 +65,7 @@ nav ul li a {
   padding: 15px 0 12px;
   font-size: 16px;
   font-weight: bold;
-  color: #bcbec2;
+  color: inherit;
 }
 
 .clearfix::after {
@@ -62,17 +78,6 @@ nav .nav-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.header-inner .hamburger-container {
-  width: 55px;
-  height: 55px;
-  font-size: 28px;
-  border: 1px solid rgba(255,255,255,0.1);
-  border-radius: 2px;
-  color: #bcbec2;
-  background-color: transparent;
-  cursor: pointer;
 }
 
 .banner {
@@ -132,7 +137,8 @@ nav .nav-wrap {
   border-bottom: 1px solid #dedede;
 }
 
-.container .profile-info dt, .container .profile-info dd {
+.container .profile-info dt,
+.container .profile-info dd {
   float: left;
   padding: 5px 0;
 }
@@ -175,11 +181,11 @@ nav .nav-wrap {
   font-size: 22px;
   font-weight: bold;
   color: #fff;
-  transition: all .5s ease;
+  transition: all 0.5s ease;
 }
 
 .container .profile-social li a:hover {
-  background: rgba(0,0,0,0.1);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .hello {
@@ -227,11 +233,11 @@ a.download-btn {
   font-weight: bold;
   font-size: 14px;
   color: #000;
-  transition: all .3s;
+  transition: all 0.3s;
 }
 
 a.download-btn:hover {
-  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18) ,0 4px 15px 0 rgba(0,0,0,0.15);
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
 }
 
 h2 {
@@ -295,13 +301,6 @@ h2 {
   height: 400px;
   background: #fff;
   box-shadow: 0 0 5px #666;
-}
-
-.header-inner.active {
-  height: 55px;
-  padding: 0 15px;
-  box-shadow: 0 10px 30px rgb(0 0 0 / 19%), 0 6px 10px rgb(0 0 0 / 23%);
-  background: #fff;
 }
 
 .filter-wrap {
