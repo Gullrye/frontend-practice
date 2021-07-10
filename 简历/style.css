@@ -14,6 +14,11 @@ header {
   width: 100%;
   background-color: transparent;
   z-index: 3;
+  transition: all .3;
+}
+
+.header-inner {
+  transition: all .3;
 }
 
 .header-inner {
@@ -233,11 +238,11 @@ h2 {
   font-size: 34px;
   margin-bottom: 25px;
   text-align: center;
+  color: #3d4451;
 }
 
 .skills {
   padding-top: 70px;
-  padding-bottom: 70px;
 }
 
 .skill-bar-box {
@@ -277,6 +282,61 @@ h2 {
   top: 0;
   left: 0;
   height: 5px;
+  border-radius: 5px;
+  background: #07cb79;
+}
+
+.portfolio {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.portfolio .portfolio-photo {
+  height: 400px;
+  background: #fff;
+  box-shadow: 0 0 5px #666;
+}
+
+.header-inner.active {
+  height: 55px;
+  padding: 0 15px;
+  box-shadow: 0 10px 30px rgb(0 0 0 / 19%), 0 6px 10px rgb(0 0 0 / 23%);
+  background: #fff;
+}
+
+.filter-wrap {
+  text-align: center;
+}
+
+.filter {
+  display: inline-block;
+}
+
+.portfolio .filter button {
+  margin-right: 40px;
+  padding: 10px 0;
+  font-weight: bold;
+  border: none;
+}
+
+.filter button:nth-child(3) {
+  margin-right: 0;
+}
+
+.filter-bar {
+  position: relative;
+  height: 5px;
+  margin: 0 0 20px;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.filter-bar span {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  width: 30px;
   border-radius: 5px;
   background: #07cb79;
 }
