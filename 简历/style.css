@@ -5,6 +5,10 @@
   text-decoration: none;
 }
 
+body {
+  background: #efefef;
+}
+
 header {
   position: fixed;
   width: 100%;
@@ -91,11 +95,11 @@ nav .nav-wrap {
   width: 940px;
   height: 1000px;
   margin: 0 auto;
-  background-color: #fff;
 }
 
 .container .about {
   box-shadow: 0 0 5px #666;
+  background-color: #fff;
 }
 
 .container .profile {
@@ -201,4 +205,78 @@ nav .nav-wrap {
 .container .about h1 {
   font-size: 36px;
   padding: 20px 0 0;
+}
+
+.download {
+  margin-top: 30px;
+  text-align: center;
+  color: #5b616c;
+}
+
+a.download-btn {
+  display: inline-block;
+  padding: 15px 20px;
+  margin-bottom: 25px;
+  border: 1px solid #cbcdcf;
+  border-radius: 2px;
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  transition: all .3s;
+}
+
+a.download-btn:hover {
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,0.18) ,0 4px 15px 0 rgba(0,0,0,0.15);
+}
+
+h2 {
+  font-size: 34px;
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.skills {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+
+.skill-bar-box {
+  padding: 50px;
+  background-color: #fff;
+  box-shadow: 0 0 5px #666;
+}
+
+.skill-bar {
+  box-sizing: border-box;
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.skill-bar .bar-data {
+  position: relative;
+  margin-bottom: 5px;
+  color: #5b616c;
+}
+
+.skill-bar .bar-data span:nth-child(2) {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.skill-bar .bar-line {
+  position: relative;
+  height: 5px;
+  border-radius: 5px;
+  background: #cdf5e4;
+}
+
+.skill-bar .bar-line .bar-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 5px;
+  border-radius: 5px;
+  background: #07cb79;
 }
