@@ -312,11 +312,12 @@ h2 {
   display: inline-block;
 }
 
-.portfolio .filter button {
+.portfolio .btn-group button {
   margin-right: 40px;
   padding: 10px 0;
   font-weight: bold;
   border: none;
+  cursor: pointer;
 }
 
 .filter button:nth-child(3) {

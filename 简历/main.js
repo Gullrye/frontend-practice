@@ -20,3 +20,9 @@ for (let i = 0; i < btns.length; i++) {
     filterBarSpan.className = `state${i+1}`
   }
 }
+
+// 加载动画
+let startPage = document.querySelector('.start-page')
+setTimeout(function(){
+  startPage.classList.remove('active')
+}, 3000)
