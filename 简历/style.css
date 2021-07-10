@@ -1,6 +1,8 @@
 * {
   margin: 0;
   padding: 0;
+  list-style: none;
+  text-decoration: none;
 }
 
 header {
@@ -31,7 +33,6 @@ header {
 nav ul li {
   float: left;
   margin-right: 30px;
-  list-style: none;
 }
 
 nav ul li a {
@@ -39,7 +40,6 @@ nav ul li a {
   padding: 15px 0 12px;
   font-size: 16px;
   font-weight: bold;
-  text-decoration: none;
   color: #bcbec2;
 }
 
@@ -119,16 +119,16 @@ nav .nav-wrap {
 
 .container .profile-info p {
   margin: 20px 0 20px 0;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid #dedede;
 }
 
 .container .profile-info dt, .container .profile-info dd {
   float: left;
-  width: 70%;
   padding: 5px 0;
 }
 
 .container dl {
-  padding: 40px 0;
   font-size: 16px;
 }
 
@@ -137,23 +137,44 @@ nav .nav-wrap {
   width: 30%;
 }
 
+.container .profile-info dd {
+  width: 70%;
+  color: #acafb4;
+}
+
 .container .profile-social {
   background-color: #07cb79;
 }
 
-.container .profile-social ul li {
-  float: left;
-  height: 85px;
-  list-style: none;
+.container .profile-social ul {
+  text-align: center;
+  padding: 15px 0;
 }
 
-hr {
-  border: none;
-  height: 1px;
-  background-color: rgba(0, 0, 0, 0.2);
+.container .profile-social ul li {
+  display: inline-block;
+  margin: 5px 15px;
+}
+
+.container .profile-social li a {
+  display: inline-block;
+  width: 45px;
+  height: 45px;
+  line-height: 45px;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
+  transition: all .5s ease;
+}
+
+.container .profile-social li a:hover {
+  background: rgba(0,0,0,0.1);
 }
 
 .hello {
+  display: inline-block;
   position: relative;
   padding: 5px;
   font-weight: bold;
@@ -178,5 +199,6 @@ hr {
 }
 
 .container .about h1 {
+  font-size: 36px;
   padding: 20px 0 0;
 }
