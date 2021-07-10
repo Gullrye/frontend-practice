@@ -166,10 +166,15 @@ hr {
   position: absolute;
   left: 4px;
   top: 100%;
-  border: 8px solid transparent;
+  /* 一种写法 */
+  /* border: 8px solid transparent;
   border-left-color: #07cb79;
   border-top-width: 0;
-  border-right-width: 0;
+  border-right-width: 0; */
+  /* 另一种 */
+  border: 5px solid #07cb79;
+  border-bottom-color: transparent;
+  border-right-color: transparent;
 }
 
 .container .about h1 {
