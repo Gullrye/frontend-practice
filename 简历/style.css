@@ -335,8 +335,22 @@ h2 {
   position: absolute;
   top: 0;
   left: 0;
-  height: 5px;
   width: 30px;
+  height: 5px;
   border-radius: 5px;
   background: #07cb79;
+  transition: all 1s;
+}
+
+.filter-bar span.state1 {
+  width: 30px;
+  left: 0;
+}
+.filter-bar span.state2 {
+  width: 82px;
+  left: 70px;
+}
+.filter-bar span.state3 {
+  width: 58px;
+  left: 192px;
 }
