@@ -246,6 +246,10 @@ nav .nav-wrap {
   border-right-color: transparent;
 }
 
+[data-x].active {
+  outline: 10px solid red;
+}
+
 .container .about h1 {
   font-size: 36px;
   padding: 20px 0 0;

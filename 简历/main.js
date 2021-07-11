@@ -6,6 +6,34 @@ window.onscroll = () => {
   } else {
     headerTop.classList.remove('sticky')
   }
+
+  // 高亮当前元素对应的导航栏标签
+  let specialTags = document.querySelectorAll('[data-x]')
+  let minIndex = 0
+
+  for (let i = 1; i < specialTags.length; i++) {
+    if (
+      Math.abs(specialTags[i].offsetTop - window.scrollY) <
+      Math.abs(specialTags[minIndex].offsetTop - window.scrollY)
+    ) {
+      minIndex = i
+    }
+  }
+  for (let i = 0; i < specialTags.length; i++) {
+    specialTags[i].classList.remove('active')
+  }
+  specialTags[minIndex].classList.add('active')
+  let id = specialTags[minIndex].id
+  let a = document.querySelector(`a[href="#${id}"]`)
+
+  let spanBar = document.querySelectorAll('.nav-wrap > ul > li > span')
+  for (let i = 0; i < spanBar.length; i++) {
+    spanBar[i].style.width = '0'
+  }
+
+  let li = a.parentNode
+  let spanBarHighlight = li.querySelector('span')
+  spanBarHighlight.style.width = '100%'
 }
 
 // 作品部分filter栏切换
@@ -67,5 +95,3 @@ for (let i = 0; i < LiTags.length; i++) {
     window.scrollTo(0, top + 110)
   }
 }
-
-
