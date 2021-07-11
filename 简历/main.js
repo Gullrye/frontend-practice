@@ -26,17 +26,34 @@ setTimeout(function () {
 }, 1000)
 
 // 鼠标进入导航栏
-let Tages = document.querySelectorAll('.nav-wrap > ul > li')
+// 下拉菜单
+let Tags = document.querySelectorAll('.nav-wrap > ul > li > a')
+let Li = document.querySelectorAll('.nav-wrap > ul > li')
 
-Tages.forEach(function (i) {
-  let subMenu = i.querySelector('.submenu')
+for (let i = 0; i < Li.length; i++) {
+  let subMenu = Li[i].querySelector('.submenu')
 
   if (subMenu) {
-    i.onmouseenter = () => {
+    Li[i].onmouseenter = () => {
       subMenu.classList.add('active')
     }
-    i.onmouseleave = () => {
+    Li[i].onmouseleave = () => {
       subMenu.classList.remove('active')
     }
   }
-})
+}
+
+// 切换条
+for (let i = 0; i < Li.length; i++) {
+  let spanBar = document.querySelectorAll('.nav-wrap > ul > li > span')
+  let index = i
+
+  // js控制width后，动画才有恢复过程，使用css animation时鼠标移开后切换条会直接消失，而不是从右往左变短至0
+  Tags[i].onmouseenter = () => {
+    spanBar[index].style.width = '100%'
+  }
+
+  Tags[i].onmouseleave = () => {
+    spanBar[index].style.width = '0'
+  }
+}

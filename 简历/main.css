@@ -56,12 +56,12 @@ header.sticky {
 }
 
 .nav-wrap > ul > li {
+  position: relative;
   float: left;
   margin-right: 30px;
 }
 
 .nav-wrap > ul > li > a {
-  position: relative;
   display: inline-block;
   padding: 15px 0 12px;
   font-size: 16px;
@@ -69,24 +69,17 @@ header.sticky {
   color: inherit;
 }
 
-.nav-wrap > ul > li > a:hover::after {
-  content: '';
+.nav-wrap > ul > li > a ~ span {
+  transition: width .3s linear;
+}
+
+.nav-wrap > ul > li > a ~ span {
   position: absolute;
   left: 0;
   top: 100%;
-  width: 100%;
+  width: 0;
   height: 3px;
   background-color: #07cb79;
-  animation: menuSlide .3s;
-}
-
-@keyframes menuSlide {
-  0% {
-    width: 0;
-  }
-  100% {
-    width: 100%;
-  }
 }
 
 .submenu {
@@ -104,6 +97,7 @@ header.sticky {
 
 .submenu > li {
   padding: 10px 30px 10px 10px;
+  white-space: nowrap;
   cursor: pointer;
 }
 
