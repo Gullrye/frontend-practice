@@ -8,7 +8,8 @@
   z-index: 4;
 }
 
-.loading::before, .loading::after {
+.loading::before,
+.loading::after {
   content: '';
   position: absolute;
   top: 0;

@@ -9,7 +9,6 @@ window.onscroll = () => {
 
   // 高亮当前元素对应的导航栏
   highLight()
-
 }
 
 // 作品部分filter栏切换
@@ -27,7 +26,7 @@ for (let i = 0; i < btns.length; i++) {
 let startPage = document.querySelector('.start-page')
 setTimeout(function () {
   startPage.classList.remove('active')
-}, 1000)
+}, 3000)
 
 // 鼠标进入导航栏
 // 下拉菜单
@@ -68,10 +67,22 @@ for (let i = 0; i < LiTags.length; i++) {
     let element = document.querySelector(href)
     let top = element.offsetTop
 
-    window.scrollTo(0, top + 110)
+    let n = 20
+    let t = 500 / n
+    let currentTop = window.scrollY
+    let targetTop = top + 110
+    let distance = (targetTop - currentTop) / n
+    let i = 0
+    let timer = setInterval(() => {
+      if (i == n) {
+        clearInterval(timer)
+        return
+      }
+      i += 1
+      window.scrollTo(0, currentTop + distance * i)
+    }, t)
   }
 }
-
 
 // 函数
 function highLight() {
@@ -86,7 +97,7 @@ function highLight() {
       minIndex = i
     }
   }
-  for (let i = 0; i< specialTags.length; i++) {
+  for (let i = 0; i < specialTags.length; i++) {
     specialTags[i].classList.remove('active')
   }
   specialTags[minIndex].classList.add('active')
@@ -97,6 +108,6 @@ function highLight() {
   for (let i = 0; i < aGroup.length; i++) {
     aGroup[i].classList.remove('active')
   }
-  
+
   a.classList.add('active')
 }
