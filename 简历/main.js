@@ -67,11 +67,11 @@ for (let i = 0; i < LiTags.length; i++) {
     let element = document.querySelector(href)
     let top = element.offsetTop
 
-    let n = 20
-    let t = 500 / n
+    let n = 20  // 一共动多少次
+    let t = 500 / n  // 动一次的时间
     let currentTop = window.scrollY
     let targetTop = top + 110
-    let distance = (targetTop - currentTop) / n
+    let distance = (targetTop - currentTop) / n  // 动一次的距离
     let i = 0
     let timer = setInterval(() => {
       if (i == n) {
