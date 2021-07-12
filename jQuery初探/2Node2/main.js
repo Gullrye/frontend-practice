@@ -1,4 +1,11 @@
-window.jQuery = function (node) {
+// 单个元素
+window.jQuery1 = function (nodeOrSelector) {
+  let node
+  if (typeof nodeOrSelector === 'string') {
+    node = document.querySelector(nodeOrSelector)
+  } else {
+    node = nodeOrSelector
+  }
   return {
     getSiblings: function () {
       let allChildren = node.parentNode.children
@@ -25,6 +32,54 @@ window.jQuery = function (node) {
   }
 }
 
-var node2 = jQuery(item2)
+var node2 = jQuery1('#item2')
 console.log(node2.getSiblings())
-node2.addClass({ a: true, b: false, c: true })
+node2.addClass({ red: true, b: false, c: true })
+
+var node3 = jQuery1(item4)
+node3.addClass({ red: true })
+
+// 控制多个元素
+window.jQuery = function (nodeOrSelector) {
+  let nodes = {}
+  if (typeof nodeOrSelector === 'string') {
+    let temp = document.querySelectorAll(nodeOrSelector) // 伪数组
+    for (let i = 0; i < temp.length; i++) {
+      nodes[i] = temp[i]
+    }
+    nodes.length = temp.length
+  } else if (nodeOrSelector instanceof Node) {
+    nodes = {
+      0: nodeOrSelector,
+      length: 1,
+    }
+  }
+
+  nodes.addClass = function (classes) {
+    classes.forEach((value) => {
+      for (let i = 0; i < nodes.length; i++) {
+        nodes[i].classList.add(value)
+      }
+    })
+  }
+
+  nodes.text = function (text) {
+    if (text === undefined) {
+      let texts = []
+      for (let i = 0; i < nodes.length; i++) {
+        texts.push(nodes[i].textContent)
+      }
+      console.log(texts);
+    } else {
+      for (let i = 0; i < nodes.length; i++) {
+        nodes[i].textContent = text
+      }
+    }
+  }
+  return nodes
+}
+
+var node4 = jQuery('ul > li')
+node4.addClass(['blue'])
+var text = node4.text()
+node4.text('hi')
