@@ -1,4 +1,4 @@
-window.Node2 = function (node) {
+window.jQuery = function (node) {
   return {
     getSiblings: function () {
       let allChildren = node.parentNode.children
@@ -25,6 +25,6 @@ window.Node2 = function (node) {
   }
 }
 
-var node2 = Node2(item2)
+var node2 = jQuery(item2)
 console.log(node2.getSiblings())
 node2.addClass({ a: true, b: false, c: true })
