@@ -69,7 +69,7 @@ window.jQuery = function (nodeOrSelector) {
       for (let i = 0; i < nodes.length; i++) {
         texts.push(nodes[i].textContent)
       }
-      console.log(texts);
+      console.log(texts)
     } else {
       for (let i = 0; i < nodes.length; i++) {
         nodes[i].textContent = text
