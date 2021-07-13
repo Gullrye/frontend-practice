@@ -31,5 +31,5 @@ function setTimer() {
     }
     $(allButtons).eq(n).trigger('click')
     n += 1
-  }, 1000)
+  }, 2000)
 }
