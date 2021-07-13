@@ -26,6 +26,7 @@
   padding: 2px 6px;
   border: 1px solid #666;
   cursor: pointer;
+  transition: all .3s ease-in-out;
 }
 
 .active {
