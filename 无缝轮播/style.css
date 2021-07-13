@@ -1,0 +1,35 @@
+.img-window {
+  width: 300px;
+  margin: 20px auto;
+  border: 4px solid skyblue;
+  box-shadow: 0 0 5px skyblue;
+  overflow: hidden;
+}
+
+.img-wrap {
+  position: relative;
+  height: 225px;
+}
+
+.img-wrap > img {
+  position: absolute;
+  top: 0;
+  width: 300px;
+  transition: all 0.3s;
+}
+
+.img-wrap > img.current {
+  left: 0;
+  transform: translateX(0);
+  z-index: 1;
+}
+
+.img-wrap > img.leave {
+  transform: translateX(-100%);
+  z-index: 1;
+}
+
+.img-wrap > img.enter {
+  /* 进入后移至右边 */
+  transform: translateX(100%);
+}
