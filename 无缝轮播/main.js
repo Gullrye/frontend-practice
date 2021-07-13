@@ -19,7 +19,7 @@ let timer = setInterval(() => {
 // 离开当前页面时，保持当前图片不变。
 document.addEventListener('visibilitychange', function(e) {
   if(document.hidden) {
-    window.clearInterval(timer)
+    clearInterval(timer)
   } else {
     timer = setInterval(() => {
       $(`.img-wrap img:nth-child(${x(n)})`)
