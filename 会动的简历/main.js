@@ -33,6 +33,9 @@
 }
 
   `
+function writeCode(result, fn) {
+  
+}
   let n = 0
   let id = setInterval(() => {
     n += 1
