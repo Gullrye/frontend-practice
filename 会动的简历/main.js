@@ -33,9 +33,9 @@
 }
 
   `
-function writeCode(result, fn) {
-  
-}
+  function writeCode(result, fn) {
+
+  }
   let n = 0
   let id = setInterval(() => {
     n += 1
@@ -64,7 +64,7 @@ function fn3(preResult) {
     background: red;
   }
   `
-  
+
   let n = 0
   let id = setInterval(() => {
     n += 1
