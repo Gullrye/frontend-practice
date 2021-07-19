@@ -1,36 +1,181 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>某云游商城</title>
   <!-- 以下两行能够有效增加搜索引擎权重 -->
-  <meta name="Keywords" content="旅游">
-  <meta name="Description" content="某云游商城，旅游的神">
-  <link rel="stylesheet" href="./css/reset.css">
-  <link rel="stylesheet" href="./css/base.css">
-  <link rel="stylesheet" href="./css/css.css">
+  <meta name="Keywords" content="旅游" />
+  <meta name="Description" content="某云游商城，旅游的神" />
+  <link rel="stylesheet" href="./css/reset.css" />
+  <link rel="stylesheet" href="./css/base.css" />
+  <link rel="stylesheet" href="./css/css.css" />
 </head>
+
 <body>
+  <!-- 计算出版心宽度为 264*3+32*3=1152px -->
   <header class="site-head">
     <div class="topbar">
-      <div class="center-wrap">
+      <div class="center-wrap clearfix">
         <nav class="short-links">
-          <ul>
-            <li>目的地</li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
-            <li></li>
+          <ul class="clearfix">
+            <li><a href="#">目的地</a></li>
+            <li><a href="#">胶囊</a></li>
+            <li class="have-menu">
+              <a href="#">社区</a>
+              <em class="arrow">
+                <b></b>
+                <i></i>
+              </em>
+              <div class="menu">
+                <ul>
+                  <li><a href="#">旅游论坛</a></li>
+                  <li><a href="#">旅行专栏</a></li>
+                  <li><a href="#">旅行问答</a></li>
+                  <li><a href="#">旅行生活分享平台</a></li>
+                  <li><a href="#">JNE旅行生活美学</a></li>
+                  <li><a href="#">Biu伴（原结伴同游）</a></li>
+                  <li><a href="#">负责任的旅行</a></li>
+                  <li><a href="#">特别策划</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">行程助手</a></li>
+            <li class="have-menu">
+              <a href="#">商城</a>
+              <em class="arrow">
+                <b></b>
+                <i></i>
+              </em>
+              <div class="menu">
+                <ul>
+                  <li><a href="#">旅游论坛</a></li>
+                  <li><a href="#">旅行专栏</a></li>
+                  <li><a href="#">旅行问答</a></li>
+                  <li><a href="#">旅行生活分享平台</a></li>
+                  <li><a href="#">JNE旅行生活美学</a></li>
+                  <li><a href="#">Biu伴（原结伴同游）</a></li>
+                  <li><a href="#">负责任的旅行</a></li>
+                  <li><a href="#">特别策划</a></li>
+                </ul>
+              </div>
+            </li>
+            <li class="have-menu">
+              <a href="#">酒店·民宿</a>
+              <em class="arrow">
+                <b></b>
+                <i></i>
+              </em>
+              <div class="menu">
+                <ul>
+                  <li><a href="#">旅游论坛</a></li>
+                  <li><a href="#">旅行专栏</a></li>
+                  <li><a href="#">旅行问答</a></li>
+                  <li><a href="#">旅行生活分享平台</a></li>
+                  <li><a href="#">JNE旅行生活美学</a></li>
+                  <li><a href="#">Biu伴（原结伴同游）</a></li>
+                  <li><a href="#">负责任的旅行</a></li>
+                  <li><a href="#">特别策划</a></li>
+                </ul>
+              </div>
+            </li>
+            <li><a href="#">特价酒店</a></li>
           </ul>
         </nav>
+        <div class="topbar-r">
+          <a href="#" class='iconfont'>&#xe62d;</a>
+          <a href="#" class='iconfont'>&#xe612;</a>
+          <a href="#" class='iconfont'>&#xe63e;</a>
+          <a href="#" class='iconfont'>&#xe61b;</a>
+          <a href="#">登录</a>
+          <a href="#">注册</a>
+        </div>
+      </div>
+    </div>
+    <div class="main-nav">
+      <div class="center-wrap">
+        <ul class="clearfix">
+          <li class="have-menu">
+            <a href="#">机酒自由行</a>
+            <div class="menu">
+              <dl>
+                <dt>全部</dt>
+                <dd>
+                  <a href="#">自由行</a>
+                  <a href="#">优惠机票</a>
+                  <a href="#">酒店</a>
+                  <a href="#">游轮</a>
+                  <a href="#">定制游</a>
+                  <a href="#">马尔代夫</a>
+                  <a href="#">海岛游</a>
+                </dd>
+              </dl>
+            </div>
+          </li>
+          <li><a href="#">优惠机票</a></li>
+          <li class="have-menu">
+            <a href="#">跟团游</a>
+            <div class="menu">
+              <dl>
+                <dt>全部</dt>
+                <dd>
+                  <a href="#">跟团游</a>
+                  <a href="#">半自助游</a>
+                </dd>
+              </dl>
+            </div>
+          </li>
+          <li><a href="#">酒店</a></li>
+          <li class="have-menu"><a href="#">当地玩乐</a>
+            <div class="menu">
+              <dl>
+                <dt>全部</dt>
+                <dd>
+                  <a href="#">日游小团</a>
+                  <a href="#">深度体验</a>
+                  <a href="#">门票票券</a>
+                  <a href="#">餐饮美食</a>
+                  <a href="#">WiFi电话卡</a>
+                  <a href="#">购物</a>
+                  <a href="#">交通票券</a>
+                </dd>
+              </dl>
+            </div>
+          </li>
+          <li><a href="#">签证</a></li>
+          <li><a href="#">游轮</a></li>
+          <li><a href="#">河轮</a></li>
+          <li><a href="#">保险</a></li>
+          <li><a href="#">租车</a></li>
+          <li class="have-menu"><a href="#">深度旅游</a>
+            <div class="menu">
+              <dl>
+                <dt>全部</dt>
+                <dd>
+                  <a href="#">CityWalk</a>
+                  <a href="#">特色长线</a>
+                  <a href="#">Q-Home</a>
+                </dd>
+              </dl>
+            </div>
+          </li>
+          <li><a href="#">私人地址</a></li>
+        </ul>
+      </div>
+
+    </div>
+    <div class="header-con">
+      <div class="center-wrap clearfix">
+        <h1>某云游商城</h1>
+        <div class="soso-box">
+          <input type="text" placeholder="查询目的地/酒店/机票攻略">
+          <a href="#" class="btn iconfont">&#xe62d;</a>
+        </div>
       </div>
     </div>
   </header>
-  <!-- 计算出版心宽度为 264*3+32*3=1152px -->
-  
 </body>
+
 </html>
