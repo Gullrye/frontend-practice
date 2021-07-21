@@ -1,4 +1,5 @@
 .site-head {
+  min-width: 1152px;
   height: 150px;
 }
 .site-head .topbar {
@@ -208,4 +209,45 @@
   background-color: #20BD9A;
   border-radius: 0 4px 4px 0;
   color: #fff;
+}
+.banner {
+  position: relative;
+  overflow: hidden;
+}
+.banner ul li img {
+  width: 100%;
+  min-width: 1152px;
+  /* 图片可能和盒子的底部产生一些缝隙 */
+  vertical-align: middle;
+}
+.banner .center-wrap {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 100%;
+  transform: translateX(-50%);
+}
+.banner .banner-nav {
+  width: 652px;
+  height: 100%;
+}
+.banner .banner-nav #banner-nav-ul {
+  height: 100%;
+}
+.banner .banner-nav #banner-nav-ul > li {
+  box-sizing: border-box;
+  width: 296px;
+  height: 16.66%;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #fff;
+  color: #fff;
+}
+.banner .banner-nav #banner-nav-ul > li:last-child {
+  border-bottom: none;
+}
+.banner .banner-nav #banner-nav-ul > li dt {
+  font-size: 18px;
+}
+.banner .banner-nav #banner-nav-ul > li dd {
+  font-size: 14px;
 }
