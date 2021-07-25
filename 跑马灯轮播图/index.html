@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .carousel {
+      position: relative;
+      width: 300px;
+      margin: 100px auto;
+      overflow: hidden;
+    }
+
+    .carousel ul {
+      position: relative;
+      width: 2000px;
+      list-style: none;
+      left: 0;
+    }
+
+    .carousel ul::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .carousel ul li {
+      float: left;
+    }
+
+    .carousel ul li img {
+      width: 300px;
+    }
+
+    .carousel .leftbtn {
+      position: absolute;
+      top: 50%;
+      left: 20px;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      border-radius: 50%;
+      background-color: rgb(0, 169, 236);
+    }
+
+    .carousel .rightbtn {
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      width: 30px;
+      height: 30px;
+      margin-top: -15px;
+      border-radius: 50%;
+      background-color: rgb(0, 169, 236);
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="carousel">
+    <ul id="list">
+      <li><img src="./images/1.jpg" alt=""></li>
+      <li><img src="./images/2.jpg" alt=""></li>
+      <li><img src="./images/3.jpg" alt=""></li>
+    </ul>
+    <button class="leftbtn"></button>
+    <button class="rightbtn"></button>
+  </div>
+
+  <script>
+    let leftbtn = document.getElementsByClassName('leftbtn')[0]
+    let rightbtn = document.getElementsByClassName('rightbtn')[0]
+    let list = document.getElementById('list')
+    let cloneLi = list.firstElementChild.cloneNode(true)
+    list.appendChild(cloneLi)
+
+    let lock = true
+    
+    let index = 0
+
+    rightbtn.onclick = function () {
+      if (!lock) return
+      lock = false
+      
+      index++
+      if (index > 2) {
+        setTimeout(function () {
+          // 取消掉过渡，因为要瞬间移动，而不是先右后左滚
+          list.style.transition = 'none'
+          list.style.left = 0
+          index = 0
+        }, 500)
+      }
+      list.style.transition = 'all 0.5s ease'
+      list.style.left = -index * 300 + 'px'
+      
+      // 函数节流
+      setTimeout(function () {
+        lock = true
+      }, 500)
+    }
+    leftbtn.onclick = function () {
+      if (!lock) return
+      lock = false
+      
+      if (index == 0) {
+        list.style.transition = 'none'
+        // 瞬间移动到假图片上
+        list.style.left = -3 * 300 + 'px'
+        // 设置一个延时器，延时时间可以是0毫秒，虽然是0毫秒，但是可以让我们过渡先是瞬间取消，然后再加上
+        setTimeout(function () {
+          list.style.transition = 'left 0.5s ease'
+          index = 2
+          list.style.left = -index * 300 + 'px'
+        }, 0)
+      } else {
+        index--
+        list.style.left = -index * 300 + 'px'
+      }
+      setTimeout(function () {
+        lock = true
+      }, 500)
+    }
+  </script>
+</body>
+
+</html>
