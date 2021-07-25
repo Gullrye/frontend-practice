@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .box {
+      width: 1000px;
+      height: 130px;
+      margin: 100px auto;
+      border: 1px solid black;
+      overflow: hidden;
+    }
+
+    .box ul {
+      position: relative;
+      width: 3000px;
+      list-style: none;
+    }
+
+    .box ul::after {
+      content: '';
+      display: block;
+      clear: both;
+    }
+
+    .box ul li {
+      float: left;
+      margin-right: 8px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="box" id="box">
+    <ul id="list">
+      <li><img src="./images/0.png" alt=""></li>
+      <li><img src="./images/1.png" alt=""></li>
+      <li><img src="./images/2.png" alt=""></li>
+      <li><img src="./images/3.png" alt=""></li>
+      <li><img src="./images/4.png" alt=""></li>
+      <li><img src="./images/5.png" alt=""></li>
+    </ul>
+  </div>
+
+  <script>
+    let box = document.getElementById('box')
+    let list = document.getElementById('list')
+
+    list.innerHTML += list.innerHTML
+    let left = 0
+    let timer
+    move()
+
+    list.onmouseenter = function () {
+      clearInterval(timer)
+    }
+    list.onmouseleave = function () {
+      move()
+    }
+
+    function move() {
+      timer = setInterval(function () {
+        left -= 4
+        if (left <= -1248) {
+          left = 0
+        }
+        list.style.left = left + 'px'
+      }, 20)
+    }
+  </script>
+</body>
+
+</html>
