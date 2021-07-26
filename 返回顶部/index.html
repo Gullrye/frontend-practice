@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      height: 6666px;
+      background: linear-gradient(to bottom, skyblue, yellow, lightgreen, blue);
+      position: relative;
+    }
+
+    .top-btn {
+      position: fixed;
+      bottom: 50px;
+      right: 50px;
+      width: 50px;
+      height: 50px;
+      background-color: white;
+      border: 2px dashed orange;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+  <button class="top-btn" id="top-btn">Top</button>
+
+  <script>
+    let topBtn = document.getElementById('top-btn')
+    let y = 0
+    let timer
+
+    topBtn.onclick = function () {
+      clearInterval(timer)
+
+      timer = setInterval(function () {
+        document.documentElement.scrollTop -= 500
+        if(document.documentElement.scrollTop <= 0) {
+          clearInterval(timer)
+        }
+      }, 20)
+    }
+  </script>
+</body>
+
+</html>

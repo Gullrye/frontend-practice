@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    .floornav {
+      position: fixed;
+      top: 50%;
+      right: 100px;
+      height: 100px;
+      margin-top: -50px;
+    }
+
+    .floornav ul {
+      list-style: none;
+      background-color: skyblue;
+    }
+
+    .floornav ul li {
+      padding: 5px 10px;
+      border: 1px solid white;
+      cursor: pointer;
+    }
+
+    .floornav ul li.current {
+      color: white;
+      background-color: green;
+    }
+
+    .content-part {
+      height: 800px;
+      margin-bottom: 100px;
+      text-align: center;
+      font-size: 30px;
+      background-color: lightseagreen;
+    }
+
+  </style>
+</head>
+
+<body>
+  <nav class="floornav">
+    <ul id="list">
+      <li class="current" data-n='体育'>体育</li>
+      <li data-n='教育'>教育</li>
+      <li data-n='科学'>科学</li>
+      <li data-n='品德'>品德</li>
+    </ul>
+  </nav>
+  <section class="content-part" data-n='体育'>1体育</section>
+  <section class="content-part" data-n='教育'>2教育</section>
+  <section class="content-part" data-n='科学'>3科学</section>
+  <section class="content-part" data-n='品德'>4品德</section>
+
+  <script>
+    let list = document.getElementById('list')
+    let lis = document.getElementsByTagName('li')
+
+    // 事件委托
+    list.onclick = function (e) {
+      if (e.target.tagName.toLowerCase() == 'li') {
+        let n = e.target.getAttribute('data-n')
+        let part = document.querySelector('.content-part[data-n=' + n + ']')
+        document.documentElement.scrollTop = part.offsetTop
+      }
+    }
+
+    let arr = []
+    let parts = document.getElementsByClassName('content-part')
+
+
+    for (let i = 0; i < parts.length; i++) {
+      arr.push(parts[i].offsetTop)
+    }
+    arr.push(Infinity)
+    let nowfloor = -1
+    let index
+
+    window.onscroll = function () {
+      let scrollTop = document.documentElement.scrollTop
+
+      for (let i = 0; i < arr.length; i++) {
+        if (scrollTop >= arr[i] && scrollTop < arr[i + 1]) {
+          index = i
+          break
+        }
+      }
+      if (nowfloor != index) {
+        nowfloor = index
+
+        for (let j = 0; j < lis.length; j++) {
+          lis[j].classList.remove('current')
+        }
+
+        lis[index].classList.add('current')
+      }
+
+    }
+  </script>
+</body>
+
+</html>
