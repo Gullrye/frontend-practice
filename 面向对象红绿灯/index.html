@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #box img {
+      width: 100px;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div id="box"></div>
+  <script>
+    // 定义红绿灯类
+    function TrafficLight() {
+      this.color = 1
+      this.init()
+      this.bindEvent()
+    }
+    TrafficLight.prototype.init = function () {
+      this.dom = document.createElement('img')
+      this.dom.src = 'images/' + this.color + '.jpg'
+      box.appendChild(this.dom)
+    }
+    TrafficLight.prototype.bindEvent = function () {
+      var self = this
+      this.dom.onclick = function () {
+        // 方法不是给this.dom
+        self.changeColor()
+      }
+    }
+    TrafficLight.prototype.changeColor = function () {
+      this.color++
+      if (this.color == 4) {
+        this.color = 1
+      }
+      this.dom.src = 'images/' + this.color + '.jpg'
+    }
+
+    let box = document.getElementById('box')
+
+    for (let i = 0; i < 100; i++) {
+      new TrafficLight()
+    }
+  </script>
+</body>
+
+</html>
