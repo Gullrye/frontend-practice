@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    body {
+      position: relative;
+      background-color: #000;
+    }
+
+    .ball {
+      position: absolute;
+      border-radius: 50%;
+    }
+
+    button {
+      width: 50px;
+      height: 50px;
+      background-color: orange;
+      color: white;
+      font-size: 26px;
+      border-radius: 5px;
+      cursor: pointer;
+      border: 2px solid;
+      border-image: linear-gradient(to right, lightgreen, red, yellow, white, blue) 20;
+      transition: all .3s;
+    }
+
+    button.active {
+      background-color: #fff;
+      color: #000;
+      border: none;
+    }
+
+  </style>
+</head>
+
+<body>
+  <button>0</button>
+  <button>1</button>
+  <button>2</button>
+  <script>
+    let buttons = document.getElementsByTagName('button')
+    var pattern = 0
+
+    // 选择模式
+    patternSelect()
+
+
+    function Ball(x, y) {
+      this.x = x
+      this.y = y
+      this.r = 20
+      this.opacity = 1
+      this.backgroundColor = colorArr[parseInt(Math.random() * colorArr.length)]
+      if (pattern == 0) {
+        do {
+          this.dX = parseInt(Math.random() * 21 - 10)
+          this.dY = parseInt(Math.random() * 21 - 10)
+        } while (this.dX == 0 && this.dY == 0)
+      } else if (pattern == 2) {
+        this.dX = 0
+        this.dY = 0
+      }
+      this.init()
+      ballArr.push(this)
+    }
+    Ball.prototype.init = function () {
+      this.dom = document.createElement('div')
+      this.dom.className = 'ball'
+      this.dom.style.width = 2 * this.r + 'px'
+      this.dom.style.height = 2 * this.r + 'px'
+      this.dom.style.top = this.y - this.r + 'px'
+      this.dom.style.left = this.x - this.r + 'px'
+      this.dom.style.backgroundColor = this.backgroundColor
+      document.body.appendChild(this.dom)
+    }
+    Ball.prototype.update = function () {
+      this.x += this.dX
+      this.y += this.dY
+      if (pattern != 1) {
+        this.opacity -= 0.01
+      }
+      this.dom.style.width = 2 * this.r + 'px'
+      this.dom.style.height = 2 * this.r + 'px'
+      this.dom.style.top = this.y - this.r + 'px'
+      this.dom.style.left = this.x - this.r + 'px'
+      this.dom.style.opacity = this.opacity
+      if (this.opacity < 0) {
+        for (let i = 0; i < ballArr.length; i++) {
+          if (ballArr[i] == this) {
+            ballArr.splice(i, 1)
+          }
+        }
+        document.body.removeChild(this.dom)
+      }
+    }
+
+    let ballArr = []
+    let colorArr = ['skyblue', 'red', 'pink', 'white', 'orange']
+    var flag = 0
+
+    document.onmousedown = function () {
+      flag = 1
+    }
+    document.onmouseup = function () {
+      flag = 0
+    }
+    document.onmousemove = function (e) {
+      if (flag)
+        new Ball(e.clientX, e.clientY)
+    }
+
+    setInterval(function () {
+      for (let i = 0; i < ballArr.length; i++) {
+        ballArr[i].update()
+      }
+    }, 20)
+
+    function patternSelect() {
+      for (let i = 0; i < buttons.length; i++) {
+      buttons[i].onclick = function () {
+        pattern = i
+        for (let j = 0; j < buttons.length; j++) {
+          buttons[j].classList.remove('active')
+        }
+        buttons[i].classList.add('active')
+      }
+    }
+    }
+  </script>
+</body>
+
+</html>
