@@ -697,6 +697,9 @@
 .tsddty img:hover {
   transform: scale(1.1);
 }
+.content-part .picbox {
+  height: 184px;
+}
 .content-part li,
 .picbox,
 .content-part .grid {
