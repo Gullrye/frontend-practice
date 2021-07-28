@@ -218,11 +218,48 @@
   overflow: hidden;
   min-width: 1152px;
 }
-.banner ul li img {
+.banner .carousel-list {
+  width: 600%;
+  overflow: hidden;
+  transition: transform .5s ease 0s;
+
+}
+.banner .carousel-list li {
+  float: left;
+  /* 相对于ul */
+  width: 16.666%;
+}
+.banner .carousel-list li img {
   width: 100%;
   min-width: 1152px;
   /* 图片可能和盒子的底部产生一些缝隙 */
   vertical-align: middle;
+}
+.banner .circles {
+  position: absolute;
+  width: 160px;
+  height: 20px;
+  bottom: 10px;
+  left: 50%;
+  margin-left: -75px;
+  z-index: 9999;
+}
+.banner .circles li {
+  float: left;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  border-radius: 10px;
+  background-color: #fff;
+  transition: all .5s ease 0s;
+  cursor: pointer;
+}
+.banner .circles li:last-child {
+  margin-right: 0;
+}
+.banner .circles li.current {
+  width: 40px;
+  background-color: #20bd9a;
 }
 .banner .center-wrap {
   position: absolute;
