@@ -216,6 +216,7 @@
 .banner {
   position: relative;
   overflow: hidden;
+  min-width: 1152px;
 }
 .banner ul li img {
   width: 100%;
@@ -751,6 +752,9 @@
 }
 .big-grid.havehover:hover .word {
   bottom: 30px;
+}
+footer {
+  min-width: 1152px;
 }
 footer .part1 {
   height: 220px;
