@@ -221,8 +221,7 @@
 .banner .carousel-list {
   width: 600%;
   overflow: hidden;
-  transition: transform .5s ease 0s;
-
+  transition: transform 0.5s ease 0s;
 }
 .banner .carousel-list li {
   float: left;
@@ -251,7 +250,7 @@
   margin-right: 10px;
   border-radius: 10px;
   background-color: #fff;
-  transition: all .5s ease 0s;
+  transition: all 0.5s ease 0s;
   cursor: pointer;
 }
 .banner .circles li:last-child {
@@ -272,10 +271,10 @@
   width: 652px;
   height: 100%;
 }
-.banner .banner-nav #banner-nav-ul {
+.banner .banner-nav .banner-nav-ul {
   height: 100%;
 }
-.banner .banner-nav #banner-nav-ul > li {
+.banner .banner-nav .banner-nav-ul > li {
   position: relative;
   box-sizing: border-box;
   width: 296px;
@@ -284,8 +283,11 @@
   border-bottom: 1px solid #fff;
   color: #fff;
 }
-.banner .banner-nav #banner-nav-ul > li:last-child {
+.banner .banner-nav .banner-nav-ul > li:last-child {
   border-bottom: none;
+}
+.banner .banner-nav .banner-nav-ul > li.current {
+  background-color: rgba(0, 0, 0, 0.6);
 }
 .banner .banner-nav > ul > li dl {
   position: absolute;
@@ -295,12 +297,12 @@
   margin-top: -24px;
   color: #fff;
 }
-.banner .banner-nav #banner-nav-ul > li dt {
+.banner .banner-nav .banner-nav-ul > li dt {
   font-size: 18px;
   height: 26px;
   line-height: 26px;
 }
-.banner .banner-nav #banner-nav-ul > li dd {
+.banner .banner-nav .banner-nav-ul > li dd {
   font-size: 14px;
   height: 22px;
   line-height: 22px;
@@ -378,9 +380,10 @@
   width: 356px;
   height: 100%;
   padding: 16px;
-  background-color: rgba(0, 0, 0, 0.4);
+  background-color: rgba(0, 0, 0, 0.6);
   box-sizing: border-box;
   color: #fff;
+  z-index: 9999;
 }
 .banner .center-wrap .banner-nav .menus-box .menu.current {
   display: block;
@@ -901,4 +904,19 @@ footer .part2 .copyrights {
   padding-top: 8px;
   font-size: 14px;
   color: #fff;
+}
+.backtotop {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  width: 60px;
+  height: 60px;
+  padding-top: 12px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 2px;
+  font-size: 14px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.85);
+  display: none;
 }

@@ -196,8 +196,8 @@
       <a href="#" class="leftbtn" id="leftbtn"></a>
       <a href="#" class="rightbtn" id="rightbtn"></a>
       <div class="banner-nav" id="banner-nav">
-        <ul id="banner-nav-ul">
-          <li class="hot">
+        <ul id="banner-nav-ul" class="banner-nav-ul">
+          <li class="hot" data-t="hot">
             <dl>
               <dt>热门出发地</dt>
               <dd>
@@ -205,7 +205,7 @@
               </dd>
             </dl>
           </li>
-          <li class="hk">
+          <li class="hk" data-t="hk">
             <dl>
               <dt>港澳台 国内</dt>
               <dd>
@@ -213,7 +213,7 @@
               </dd>
             </dl>
           </li>
-          <li class="jp">
+          <li class="jp" data-t="jp">
             <dl>
               <dt>日本 韩国</dt>
               <dd>
@@ -221,7 +221,7 @@
               </dd>
             </dl>
           </li>
-          <li class="as">
+          <li class="as" data-t="as">
             <dl>
               <dt>东南亚 南亚</dt>
               <dd>
@@ -229,7 +229,7 @@
               </dd>
             </dl>
           </li>
-          <li class="eu">
+          <li class="eu" data-t="eu">
             <dl>
               <dt>欧洲 美洲</dt>
               <dd>
@@ -237,7 +237,7 @@
               </dd>
             </dl>
           </li>
-          <li class="au">
+          <li class="au" data-t="au">
             <dl>
               <dt>澳新 中东非</dt>
               <dd>
@@ -570,6 +570,8 @@
       </div>
     </div>
   </section>
+  <script src="./js/carousel.js"></script>
+  <script src="./js/menu.js"></script>
   <!-- 热门广告 -->
   <section class="hot-ads">
     <div class="center-wrap">
@@ -1142,7 +1144,10 @@
     </div>
   </footer>
 
-  <script src="./js/carousel.js"></script>
+  <!-- 返回顶部 -->
+  <a href="javascript:;" class="backtotop" id="backtotop">返回<br>顶部</a>
+
+  <script src="./js/backtotop.js"></script>
 </body>
 
 </html>
