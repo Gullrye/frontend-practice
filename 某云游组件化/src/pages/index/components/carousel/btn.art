@@ -1,0 +1,4 @@
+<div class="btns">
+  <a href="#" class="leftbtn" id="leftbtn"></a>
+  <a href="#" class="rightbtn" id="rightbtn"></a>
+</div>

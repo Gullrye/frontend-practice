@@ -1,0 +1,23 @@
+.banner .center-wrap .leftbtn {
+  position: absolute;
+  left: -38px;
+  top: 50%;
+  width: 28px;
+  height: 44px;
+  margin-top: -22px;
+  /* 图片改为assets中的 */
+  background: url(images/icons.png) no-repeat -21px -94px;
+}
+.banner .center-wrap .rightbtn {
+  position: absolute;
+  right: -38px;
+  top: 50%;
+  width: 28px;
+  height: 44px;
+  margin-top: -22px;
+  background: url(images/icons.png) no-repeat -21px -29px;
+}
+.banner .center-wrap .leftbtn:hover,
+.banner .center-wrap .rightbtn:hover {
+  opacity: 0.6;
+}

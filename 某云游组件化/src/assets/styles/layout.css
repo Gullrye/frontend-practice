@@ -1,0 +1,167 @@
+.content-part .hd {
+  margin-bottom: 32px;
+  font-size: 36px;
+  color: #1c1f21;
+}
+.content-part .hd h2 {
+  float: left;
+}
+.content-part .hd em {
+  float: left;
+  position: relative;
+  top: 25px;
+  left: 12px;
+  font-size: 12px;
+}
+.content-part .hd nav {
+  float: right;
+}
+.content-part .hd > nav > ul {
+  padding-top: 16px;
+}
+.content-part .hd > nav > ul > li {
+  float: left;
+  margin-right: 16px;
+  font-size: 14px;
+}
+.content-part .hd > nav > ul > li:last-child {
+  margin-right: 0;
+}
+.content-part .hd > nav > ul > li a {
+  color: rgba(0, 0, 0, 0.85);
+}
+.content-part .hd > nav > ul > li.current {
+  padding-bottom: 4px;
+  border-bottom: 4px solid #20bd9a;
+}
+.content-part .hd > nav > ul > li.current a {
+  color: #20bd9a;
+}
+.content-part .bd .more-grid {
+  width: 264px;
+  height: 270px;
+}
+.content-part .bd .more-grid a {
+  display: block;
+  padding-top: 46px;
+  height: 100%;
+  box-sizing: border-box;
+}
+.content-part .bd .more-grid {
+  position: relative;
+  box-sizing: border-box;
+  background-image: linear-gradient(180deg, #34e3bc 0%, #15af7a 98%);
+}
+.content-part .bd .more-grid p {
+  font-size: 14px;
+  line-height: 22px;
+  text-align: center;
+  color: #fff;
+}
+.content-part .bd .more-grid span.iconfont {
+  position: absolute;
+  width: 48px;
+  height: 48px;
+  font-size: 48px;
+  left: 50%;
+  top: 118px;
+  margin-left: -24px;
+  color: #fff;
+}
+.content-part .bd .more-grid:hover span.iconfont {
+  animation: ud 0.5s ease 0s infinite alternate;
+}
+@keyframes ud {
+  from {
+    transform: translateX(-10px);
+  }
+  to {
+    transform: translateX(10px);
+  }
+}
+.content-part .bd .more-grid ul {
+  width: 236px;
+  margin: 0 auto;
+  margin-top: 112px;
+  text-align: center;
+  /* 解决inline-block元素之间的空隙 */
+  font-size: 0;
+}
+.content-part .bd .more-grid ul li {
+  display: inline-block;
+  padding: 0 8px;
+  /* line-height: 22px; */
+  font-size: 14px;
+  border-right: 1px solid #fff;
+  color: #fff;
+}
+.content-part .bd .more-grid ul li:last-child {
+  border-right: none;
+}
+.content-part img,
+.tsddty img {
+  transition: all 0.3s;
+}
+.content-part img:hover,
+.tsddty img:hover {
+  transform: scale(1.1);
+}
+.content-part .picbox {
+  height: 184px;
+}
+.content-part li,
+.picbox,
+.content-part .grid {
+  overflow: hidden;
+}
+
+.common-style {
+  height: 698px;
+  padding-top: 40px;
+}
+
+.common-style .bd > ul > li {
+  position: relative;
+  float: left;
+  margin-right: 32px;
+  margin-bottom: 32px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.08);
+}
+.common-style .bd > ul > li:hover {
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+.common-style .bd > ul > li:nth-child(3),
+.common-style .bd > ul > li:nth-child(7) {
+  margin-right: 0;
+}
+.common-style .bd > ul > li.big-grid {
+  position: relative;
+  width: 560px;
+  height: 270px;
+  margin-right: 32px;
+}
+.common-style .bd > ul > li.big-grid .info {
+  position: absolute;
+  bottom: 0;
+  width: 560px;
+  height: 103px;
+  line-height: 22px;
+  padding: 30px 26px;
+  box-sizing: border-box;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.55);
+}
+.common-style .bd > ul > li.pro-grid {
+  width: 264px;
+  height: 270px;
+}
+.common-style .bd > ul > li.pro-grid .wordbox {
+  padding: 14px;
+  font-size: 14px;
+  color: #1c1f21;
+}
+
+.common-style .bd > ul > li .picbox {
+  position: relative;
+  height: 184px;
+}

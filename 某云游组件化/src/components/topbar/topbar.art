@@ -1,0 +1,77 @@
+<div class="topbar">
+  <div class="center-wrap clearfix">
+    <nav class="short-links">
+      <ul class="clearfix">
+        <li><a href="#">目的地</a></li>
+        <li><a href="#">胶囊</a></li>
+        <li class="have-menu">
+          <a href="#">社区</a>
+          <em class="arrow">
+            <b></b>
+            <i></i>
+          </em>
+          <div class="menu">
+            <ul>
+              <li><a href="#">旅游论坛</a></li>
+              <li><a href="#">旅行专栏</a></li>
+              <li><a href="#">旅行问答</a></li>
+              <li><a href="#">旅行生活分享平台</a></li>
+              <li><a href="#">JNE旅行生活美学</a></li>
+              <li><a href="#">Biu伴（原结伴同游）</a></li>
+              <li><a href="#">负责任的旅行</a></li>
+              <li><a href="#">特别策划</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">行程助手</a></li>
+        <li class="have-menu">
+          <a href="#">商城</a>
+          <em class="arrow">
+            <b></b>
+            <i></i>
+          </em>
+          <div class="menu">
+            <ul>
+              <li><a href="#">旅游论坛</a></li>
+              <li><a href="#">旅行专栏</a></li>
+              <li><a href="#">旅行问答</a></li>
+              <li><a href="#">旅行生活分享平台</a></li>
+              <li><a href="#">JNE旅行生活美学</a></li>
+              <li><a href="#">Biu伴（原结伴同游）</a></li>
+              <li><a href="#">负责任的旅行</a></li>
+              <li><a href="#">特别策划</a></li>
+            </ul>
+          </div>
+        </li>
+        <li class="have-menu">
+          <a href="#">酒店·民宿</a>
+          <em class="arrow">
+            <b></b>
+            <i></i>
+          </em>
+          <div class="menu">
+            <ul>
+              <li><a href="#">旅游论坛</a></li>
+              <li><a href="#">旅行专栏</a></li>
+              <li><a href="#">旅行问答</a></li>
+              <li><a href="#">旅行生活分享平台</a></li>
+              <li><a href="#">JNE旅行生活美学</a></li>
+              <li><a href="#">Biu伴（原结伴同游）</a></li>
+              <li><a href="#">负责任的旅行</a></li>
+              <li><a href="#">特别策划</a></li>
+            </ul>
+          </div>
+        </li>
+        <li><a href="#">特价酒店</a></li>
+      </ul>
+    </nav>
+    <div class="topbar-r">
+      <a href="#" class='iconfont'>&#xe62d;</a>
+      <a href="#" class='iconfont'>&#xe612;</a>
+      <a href="#" class='iconfont'>&#xe63e;</a>
+      <a href="#" class='iconfont'>&#xe61b;</a>
+      <a href="#">登录</a>
+      <a href="#">注册</a>
+    </div>
+  </div>
+</div>
