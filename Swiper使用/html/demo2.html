@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Demo2</title>
+  <link rel="stylesheet" href="../js/swiper/idangerous.swiper2.7.6.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide bg-red">1</div>
+      <div class="swiper-slide bg-green">2</div>
+      <div class="swiper-slide bg-blue">3</div>
+    </div>
+  </div>
+
+  <script src="../js/swiper/idangerous.swiper2.7.6.min.js"></script>
+  <script src="../js/swiper/idangerous.swiper.progress.min.js"></script>
+
+  <script>
+    // Progress插件使用
+    // 官网上查看Swiper Smooth Progress插件演示，查看源代码，有demo演示，对js部分进行copy
+    let swiper = new Swiper('.swiper-container', {
+      progress: true,
+      onProgressChange: function (swiper) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          var slide = swiper.slides[i]
+          var progress = slide.progress
+          swiper.setTransform(slide, 'translate3d(0px,0,' + (-Math.abs(progress * 1500)) + 'px)')
+        }
+      },
+      onTouchStart: function (swiper) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.setTransition(swiper.slides[i], 0)
+        }
+      },
+      onSetWrapperTransition: function (swiper, speed) {
+        for (var i = 0; i < swiper.slides.length; i++) {
+          swiper.setTransition(swiper.slides[i], speed)
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

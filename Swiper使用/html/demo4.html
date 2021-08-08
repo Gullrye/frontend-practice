@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Demo4</title>
+  <link rel="stylesheet" href="../js/swiper/idangerous.swiper2.7.6.css">
+  <link rel="stylesheet" href="../js/swiper/idangerous.swiper.scrollbar-2.4.1.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide bg-red">1</div>
+      <div class="swiper-slide bg-green">2</div>
+      <div class="swiper-slide bg-blue">3</div>
+    </div>
+  </div>
+  <div class="swiper-scrollbar"></div>
+  <script src="../js/swiper/idangerous.swiper2.7.6.min.js"></script>
+  <script src="../js/swiper/idangerous.swiper.scrollbar-2.4.1.min.js"></script>
+  <script>
+    // scrollbar 插件
+    let swiper = new Swiper('.swiper-container', {
+      scrollbar: {
+        container: '.swiper-scrollbar',
+        draggable: true,
+        hide: true,
+        snapOnRelease: true
+      }
+    })
+  </script>
+</body>
+
+</html>

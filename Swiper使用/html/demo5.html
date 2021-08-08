@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Swiper Demo1</title>
+  <link rel="stylesheet" href="../js/swiper/idangerous.swiper2.7.6.css">
+  <link rel="stylesheet" href="../css/index.css">
+</head>
+
+<body>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide bg-1png"></div>
+      <div class="swiper-slide bg-2png"></div>
+      <div class="swiper-slide bg-3png"></div>
+      <div class="swiper-slide bg-4png"></div>
+    </div>
+  </div>
+  <div class="tabs">
+    <a href="###" class="active">首页</a>
+    <a href="###">课程</a>
+    <a href="###">发现</a>
+    <a href="###">我的</a>
+  </div>
+  <script src="../js/jquery/jquery-1.10.1.min.js"></script>
+  <script src="../js/swiper/idangerous.swiper2.7.6.min.js"></script>
+
+  <script>
+    let swiper = new Swiper('.swiper-container', {
+      onSlideChangeStart: function (swiper) {
+        // console.log(swiper.activeIndex)
+        let index = swiper.activeIndex
+        $('.tabs a').removeClass('active')
+        $('.tabs a').eq(index).addClass('active')
+      }
+    })
+    $('.tabs a').click(function (e) {
+      e.preventDefault()
+      // console.log($(this).index())
+      let index = $(this).index()
+      $('.tabs a').removeClass('active')
+      $(this).addClass('active')
+      swiper.swipeTo(index)
+      return false
+    })
+  </script>
+</body>
+
+</html>
