@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Swiper Demo3</title>
+    <link rel="stylesheet" href="../js/swiper/idangerous.swiper2.7.6.css" />
+    <link rel="stylesheet" href="../js/swiper/idangerous.swiper.3dflow.css" />
+    <link rel="stylesheet" href="../css/index.css" />
+    <style>
+      html {
+        background-color: black;
+      }
+      .swiper-container, .swiper-wrapper {
+        height: 50vw;
+      }
+      .pagination {
+        height: 40px;
+        background-color: red;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide bg-red">
+          <div><p>1</p></div>
+        </div>
+        <div class="swiper-slide bg-green">
+          <div><p>1</p></div>
+        </div>
+        <div class="swiper-slide bg-blue">
+          <div><p>1</p></div>
+        </div>
+      </div>
+      <div class="pagination"></div>
+      <button class="swiper-button-prev">前</button>
+      <button class="swiper-button-next">后</button>
+    </div>
+
+    <script src="../js/swiper/idangerous.swiper2.7.6.min.js"></script>
+    <script src="../js/swiper/idangerous.swiper.3dflow.js"></script>
+
+    <script>
+      // 3d flow 插件
+      let swiper = new Swiper('.swiper-container', {
+        tdFlow: {},
+        autoplay: 2000,
+        loop: true,
+        pagination: '.pagination',
+        onInit: function (swiper) {
+          swiper.swipeNext()
+        },
+        loop: true,
+      })
+
+      $('.swiper-button-prev').click(function () {
+        mySwiper.swipePrev()
+      })
+      $('.swiper-button-next').click(function () {
+        mySwiper.swipeNext()
+      })
+    </script>
+  </body>
+</html>
