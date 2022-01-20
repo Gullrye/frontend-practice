@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .life-container {
+        width: 800px;
+        height: auto;
+        margin: 20px auto;
+      }
+      .title {
+        font-size: 20px;
+        font-weight: bold;
+        text-align: center;
+      }
+      .author {
+        text-align: center;
+      }
+      .summary-box {
+        border-bottom: 1px solid #eee;
+      }
+      .bar {
+        position: relative;
+        width: 100%;
+        height: 20px;
+        border-radius: 10px;
+        background: #e4e8f1;
+      }
+      .bar-mask {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: '';
+        width: 100%;
+        height: 20px;
+        border-radius: 10px;
+        background: skyblue;
+      }
+      .bar-mask > span {
+        position: absolute;
+        right: 0;
+        height: 20px;
+        line-height: 20px;
+        padding-right: 2px;
+        font-size: 12px;
+        color: #fff;
+      }
+      .summary-bar-mask {
+        width: 60%;
+        background: repeating-linear-gradient(
+          45deg,
+          #6ac9ff 10px,
+          #6ac9ff 25px,
+          #50bfff 25px,
+          #50bfff 40px
+        );
+      }
+      .day-bar-mask {
+        width: 3%;
+        background: repeating-linear-gradient(
+          45deg,
+          #ff6464 10px,
+          #ff6464 25px,
+          #ff4949 25px,
+          #ff4949 40px
+        );
+      }
+      .week-bar-mask {
+        width: 43%;
+        background: repeating-linear-gradient(
+          45deg,
+          #f8c44a 10px,
+          #f8c44a 25px,
+          #f7ba2a 25px,
+          #f7ba2a 40px
+        );
+      }
+      .mon-bar-mask {
+        width: 36%;
+        background: repeating-linear-gradient(
+          45deg,
+          #f8c44a 10px,
+          #f8c44a 25px,
+          #f7ba2a 25px,
+          #f7ba2a 40px
+        );
+      }
+      .year-bar-mask {
+        width: 95%;
+        background: repeating-linear-gradient(
+          45deg,
+          #36d57d 10px,
+          #36d57d 25px,
+          #13ce66 25px,
+          #13ce66 40px
+        );
+      }
+    </style>
+  </head>
+  <body>
+    <div class="life-container">
+      <div class="title">"锦瑟无端五十弦"</div>
+      <p class="author">Zz <strong>·</strong> 打工人</p>
+      <div class="summary-box">
+        <p>你的<strong>人生</strong>还剩下<strong>36</strong>年</p>
+        <div class="summary-bar bar">
+          <div class="summary-bar-mask bar-mask">
+            <span>61%</span>
+          </div>
+        </div>
+        <p>
+          你也许还能再吃 <strong>40104</strong> 顿饭，度过
+          <strong>1909</strong> 个愉快的周末，以及享受
+          <strong>3660</strong> 个美妙的夜晚.
+        </p>
+      </div>
+      <div class="detail-box">
+        <p>今<strong>天</strong>还余下大约 1 小时</p>
+        <div class="bar day-bar">
+          <div class="day-bar-mask bar-mask">
+            <span>3%</span>
+          </div>
+        </div>
+
+        <p>本<strong>周</strong>还余下 3 天</p>
+        <div class="bar week-bar">
+          <div class="week-bar-mask bar-mask">
+            <span>43%</span>
+          </div>
+        </div>
+
+        <p>这个<strong>月</strong>还余下 11 天</p>
+        <div class="bar mon-bar">
+          <div class="mon-bar-mask bar-mask">
+            <span>36%</span>
+          </div>
+        </div>
+
+        <p>2022 <strong>年</strong>还余下 12 个月</p>
+        <div class="bar year-bar">
+          <div class="year-bar-mask bar-mask">
+            <span>95%</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
