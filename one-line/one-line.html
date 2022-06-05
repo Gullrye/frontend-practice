@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>one line</title>
+    <style>
+      .container {
+        display: flex;
+        align-items: center;
+        height: 100vh;
+      }
+      .bar {
+        width: 100vw;
+        height: 40px;
+        line-height: 40px;
+        border-radius: 20px;
+        background: #eee;
+      }
+      .bar-mask {
+        position: relative;
+        width: 50%;
+        height: 40px;
+        border-radius: 20px;
+        background-color: skyblue;
+        
+        background-image: linear-gradient(
+          45deg,
+          
+          rgba(255,255,255, .15) 0%,
+          rgba(255,255,255, .15) 25%,
+          
+          transparent 25%,
+          transparent 50%,
+          
+          rgba(255,255,255, .15) 50%,
+          rgba(255,255,255, .15) 75%,
+          
+          transparent 75%,
+          transparent 100%
+          );
+          animation: flow 5s linear infinite;
+          background-size: 80px 80px;
+        }
+      @keyframes flow {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: -320px 0;
+        }
+      }
+      .percent {
+        position: absolute;
+        right: 10px;
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="bar">
+        <div class="bar-mask">
+          <div class="percent">50%</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
